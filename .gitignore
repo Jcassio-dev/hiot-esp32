@@ -1,0 +1,15 @@
+CLAUDE.md
+CLAUDE.local.md
+.claude/
+
+firmware/.pio/
+firmware/include/secrets.h
+
+infra/.env
+infra/node-red/flows/.flows*.backup
+infra/node-red/flows/*.backup
+
+__pycache__/
+.venv/
+
+infra/docker-compose.override.yml

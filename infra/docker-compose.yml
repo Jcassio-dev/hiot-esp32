@@ -1,0 +1,56 @@
+name: hiot
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto:2.0.21
+    restart: unless-stopped
+    entrypoint: ["/bin/sh", "/init.sh"]
+    environment:
+      MQTT_ESP32_PASS: ${MQTT_ESP32_PASS:?defina MQTT_ESP32_PASS no .env}
+      MQTT_NODERED_PASS: ${MQTT_NODERED_PASS:?defina MQTT_NODERED_PASS no .env}
+    ports:
+      - "${MQTT_PUBLIC_PORT:-1883}:1883"
+    volumes:
+      - ./mosquitto/init.sh:/init.sh:ro
+      - ./mosquitto/config:/mosquitto/config:ro
+      - mosquitto_data:/mosquitto/data
+      - mosquitto_log:/mosquitto/log
+    healthcheck:
+      test: ["CMD-SHELL", "mosquitto_pub -h localhost -u nodered -P \"$$MQTT_NODERED_PASS\" -t hiot/_healthcheck -m ok || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
+
+  node-red:
+    build: ./node-red
+    image: hiot-node-red:local
+    restart: unless-stopped
+    depends_on:
+      mosquitto:
+        condition: service_healthy
+    environment:
+      TZ: ${TZ:-America/Fortaleza}
+      MQTT_HOST: mosquitto
+      MQTT_PORT: "1883"
+      MQTT_USER: nodered
+      MQTT_PASS: ${MQTT_NODERED_PASS}
+      NODE_RED_ADMIN_USER: ${NODE_RED_ADMIN_USER:-admin}
+      NODE_RED_ADMIN_HASH: ${NODE_RED_ADMIN_HASH:?defina NODE_RED_ADMIN_HASH no .env}
+      NODE_RED_CREDENTIAL_SECRET: ${NODE_RED_CREDENTIAL_SECRET:?defina NODE_RED_CREDENTIAL_SECRET no .env}
+    ports:
+      - "${NODE_RED_PUBLIC_PORT:-1880}:1880"
+    volumes:
+      - node_red_data:/data
+      - ./node-red/flows:/flows
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:1880/ || exit 1"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s
+
+volumes:
+  mosquitto_data:
+  mosquitto_log:
+  node_red_data:

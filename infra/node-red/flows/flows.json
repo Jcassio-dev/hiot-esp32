@@ -1,0 +1,1163 @@
+[
+    {
+        "id": "e7728c2fb6272181",
+        "type": "tab",
+        "label": "HIoT",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "9a1a81f0e748284b",
+        "type": "mqtt-broker",
+        "name": "Mosquitto",
+        "broker": "${MQTT_HOST}",
+        "port": "${MQTT_PORT}",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "8305061c48a0e434",
+        "type": "ui-base",
+        "name": "HIoT",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": false
+    },
+    {
+        "id": "9a61931c6593eec7",
+        "type": "ui-theme",
+        "name": "HIoT",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0f6b5c",
+            "bgPage": "#eef2f0",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cfd8d4"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "6px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "e1b8ff18e72cc5f1",
+        "type": "ui-page",
+        "name": "Monitor",
+        "ui": "8305061c48a0e434",
+        "path": "/monitor",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "9a61931c6593eec7",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b0499ed8fe2669a4",
+        "type": "ui-page",
+        "name": "Config",
+        "ui": "8305061c48a0e434",
+        "path": "/config",
+        "icon": "tune",
+        "layout": "grid",
+        "theme": "9a61931c6593eec7",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b92664c7d4090185",
+        "type": "ui-group",
+        "name": "ESP32",
+        "page": "e1b8ff18e72cc5f1",
+        "width": "6",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "689055030df02ad0",
+        "type": "ui-group",
+        "name": "Alertas",
+        "page": "e1b8ff18e72cc5f1",
+        "width": "6",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "c74bede07d4f6d78",
+        "type": "ui-group",
+        "name": "Temperatura e umidade",
+        "page": "e1b8ff18e72cc5f1",
+        "width": "6",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "e7fbd04bf9ba403a",
+        "type": "ui-group",
+        "name": "Presença",
+        "page": "e1b8ff18e72cc5f1",
+        "width": "6",
+        "height": "1",
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "0aaf6dec82a4745f",
+        "type": "ui-group",
+        "name": "Última hora",
+        "page": "e1b8ff18e72cc5f1",
+        "width": "12",
+        "height": "1",
+        "order": 5,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "153e8b617dfa2711",
+        "type": "ui-group",
+        "name": "Limites",
+        "page": "b0499ed8fe2669a4",
+        "width": "6",
+        "height": "1",
+        "order": 6,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "062b6ee361455e1a",
+        "type": "comment",
+        "z": "e7728c2fb6272181",
+        "name": "Temperatura e umidade",
+        "info": "",
+        "x": 150,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "764cfde6c2928a50",
+        "type": "mqtt in",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/sensor/dht",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "9a1a81f0e748284b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 150,
+        "y": 100,
+        "wires": [
+            [
+                "210560e77aa92a0e",
+                "79d5f16550f702a1"
+            ]
+        ]
+    },
+    {
+        "id": "210560e77aa92a0e",
+        "type": "function",
+        "z": "e7728c2fb6272181",
+        "name": "Verifica temperatura e umidade",
+        "func": "const limites = global.get('limites', 'file');\nconst t = msg.payload.t;\nconst h = msg.payload.h;\n\n// estado anterior dos alertas\nlet tempAlta = flow.get('tempAlta') || false;\nlet tempBaixa = flow.get('tempBaixa') || false;\nlet umidadeAlta = flow.get('umidadeAlta') || false;\n\n// histerese\nif (t > limites.tempAlta) tempAlta = true;\nif (t <= limites.tempAlta - limites.histTemp) tempAlta = false;\n\nif (t < limites.tempBaixa) tempBaixa = true;\nif (t >= limites.tempBaixa + limites.histTemp) tempBaixa = false;\n\nif (h > limites.umidadeAlta) umidadeAlta = true;\nif (h <= limites.umidadeAlta - limites.histUmidade) umidadeAlta = false;\n\nflow.set('tempAlta', tempAlta);\nflow.set('tempBaixa', tempBaixa);\nflow.set('umidadeAlta', umidadeAlta);\n\nlet alertas = [];\nif (tempAlta) alertas.push('Temperatura alta');\nif (tempBaixa) alertas.push('Temperatura baixa');\nif (umidadeAlta) alertas.push('Umidade alta');\nconst textoAlertas = alertas.length > 0 ? alertas.join(', ') : 'Nenhum alerta';\n\n// só manda comando quando o LED muda\nconst ledTemp = tempAlta || tempBaixa;\nlet comandoTemp = null;\nif (ledTemp !== flow.get('ledTemp')) {\n    flow.set('ledTemp', ledTemp);\n    comandoTemp = { payload: ledTemp ? 'on' : 'off' };\n}\n\nlet comandoUmidade = null;\nif (umidadeAlta !== flow.get('ledUmidade')) {\n    flow.set('ledUmidade', umidadeAlta);\n    comandoUmidade = { payload: umidadeAlta ? 'on' : 'off' };\n}\n\nreturn [\n    { topic: 'Temperatura', payload: t },\n    { topic: 'Umidade', payload: h },\n    comandoTemp,\n    comandoUmidade,\n    { payload: textoAlertas }\n];\n",
+        "outputs": 5,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 420,
+        "y": 100,
+        "wires": [
+            [
+                "7a9146677c842425",
+                "48170923224d590c"
+            ],
+            [
+                "f46cd3b0e60b88f1",
+                "091a839e418c6340"
+            ],
+            [
+                "9b749c52310c5a20",
+                "3c4423fe9907f6ea"
+            ],
+            [
+                "c05b8660df5d0f40",
+                "ce61620c135d338f"
+            ],
+            [
+                "b4f8cdead31c8077"
+            ]
+        ]
+    },
+    {
+        "id": "79d5f16550f702a1",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "b92664c7d4090185",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "DHT11 lido no core",
+        "label": "DHT11 lido no core",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload.core",
+        "valueType": "msg",
+        "x": 430,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "7a9146677c842425",
+        "type": "ui-gauge",
+        "z": "e7728c2fb6272181",
+        "name": "Temperatura",
+        "group": "c74bede07d4f6d78",
+        "order": 1,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Temperatura",
+        "alwaysShowTitle": true,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#2f6fd6"
+            },
+            {
+                "from": "20",
+                "color": "#1f8f4e"
+            },
+            {
+                "from": "25",
+                "color": "#d63a2f"
+            }
+        ],
+        "min": 0,
+        "max": 50,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 710,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "48170923224d590c",
+        "type": "ui-chart",
+        "z": "e7728c2fb6272181",
+        "group": "0aaf6dec82a4745f",
+        "name": "Temperatura (°C)",
+        "label": "Temperatura (°C)",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "",
+        "ymax": "",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#d63a2f"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 720,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "f46cd3b0e60b88f1",
+        "type": "ui-gauge",
+        "z": "e7728c2fb6272181",
+        "name": "Umidade",
+        "group": "c74bede07d4f6d78",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": 3,
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Umidade",
+        "alwaysShowTitle": true,
+        "floatingTitlePosition": "top-left",
+        "units": "%",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#1f8f4e"
+            },
+            {
+                "from": "50",
+                "color": "#e08a12"
+            }
+        ],
+        "min": 0,
+        "max": 100,
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 700,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "091a839e418c6340",
+        "type": "ui-chart",
+        "z": "e7728c2fb6272181",
+        "group": "0aaf6dec82a4745f",
+        "name": "Umidade (%)",
+        "label": "Umidade (%)",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "timestamp",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "xmin": "",
+        "xmax": "",
+        "yAxisLabel": "",
+        "yAxisProperty": "payload",
+        "yAxisPropertyType": "msg",
+        "ymin": "0",
+        "ymax": "100",
+        "bins": 10,
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 2,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#2f6fd6"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": 6,
+        "height": 4,
+        "className": "",
+        "interpolation": "linear",
+        "x": 710,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9b749c52310c5a20",
+        "type": "mqtt out",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/led/temperature",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9a1a81f0e748284b",
+        "x": 770,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "3c4423fe9907f6ea",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "689055030df02ad0",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "LED de temperatura",
+        "label": "LED de temperatura",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 740,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "c05b8660df5d0f40",
+        "type": "mqtt out",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/led/humidity",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9a1a81f0e748284b",
+        "x": 760,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "ce61620c135d338f",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "689055030df02ad0",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "LED de umidade",
+        "label": "LED de umidade",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 730,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "b4f8cdead31c8077",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "689055030df02ad0",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Alertas",
+        "label": "Alertas",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 700,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "0bf3ae1ca880c483",
+        "type": "comment",
+        "z": "e7728c2fb6272181",
+        "name": "Presença",
+        "info": "",
+        "x": 150,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "67b2ad981e4e0fff",
+        "type": "mqtt in",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/sensor/presence",
+        "qos": "1",
+        "datatype": "json",
+        "broker": "9a1a81f0e748284b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 160,
+        "y": 520,
+        "wires": [
+            [
+                "0559c4880d457e2d",
+                "9a525e2b358da016"
+            ]
+        ]
+    },
+    {
+        "id": "0559c4880d457e2d",
+        "type": "function",
+        "z": "e7728c2fb6272181",
+        "name": "Verifica presença",
+        "func": "const limites = global.get('limites', 'file');\nconst v = msg.payload.v;\n\nif (v === 1) {\n    // movimento: cancela o timer\n    clearTimeout(context.get('timer'));\n    context.set('timer', null);\n\n    if (context.get('ledLigado')) {\n        return [{ payload: 'Movimento detectado' }, null];\n    }\n    context.set('ledLigado', true);\n    return [{ payload: 'Movimento detectado' }, { payload: 'on' }];\n}\n\n// já está contando\nif (context.get('timer')) {\n    return null;\n}\n\n// sem movimento: apaga depois do tempo\nif (context.get('ledLigado')) {\n    const timer = setTimeout(function () {\n        context.set('timer', null);\n        context.set('ledLigado', false);\n        node.send([{ payload: 'Sem movimento' }, { payload: 'off' }]);\n    }, limites.tempoPresenca * 1000);\n    context.set('timer', timer);\n    return [{ payload: 'Sem movimento, LED apaga em ' + limites.tempoPresenca + ' s' }, null];\n}\n\nreturn [{ payload: 'Sem movimento' }, null];\n",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 400,
+        "y": 520,
+        "wires": [
+            [
+                "eee054d702bd1980"
+            ],
+            [
+                "04be070392148f2e",
+                "d0b03376932982b4"
+            ]
+        ]
+    },
+    {
+        "id": "9a525e2b358da016",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "b92664c7d4090185",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "PIR lido no core",
+        "label": "PIR lido no core",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload.core",
+        "valueType": "msg",
+        "x": 410,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "eee054d702bd1980",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "e7fbd04bf9ba403a",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Presença",
+        "label": "Presença",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 690,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "04be070392148f2e",
+        "type": "mqtt out",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/led/presence",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "9a1a81f0e748284b",
+        "x": 760,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "d0b03376932982b4",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "e7fbd04bf9ba403a",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "LED de presença",
+        "label": "LED de presença",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 730,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "c0dd5ad347e96644",
+        "type": "comment",
+        "z": "e7728c2fb6272181",
+        "name": "Status (last will)",
+        "info": "",
+        "x": 150,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "df402b4b4e66f250",
+        "type": "mqtt in",
+        "z": "e7728c2fb6272181",
+        "name": "",
+        "topic": "hiot/esp32-01/status",
+        "qos": "1",
+        "datatype": "utf8",
+        "broker": "9a1a81f0e748284b",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 720,
+        "wires": [
+            [
+                "cb8c90c852795293"
+            ]
+        ]
+    },
+    {
+        "id": "cb8c90c852795293",
+        "type": "ui-text",
+        "z": "e7728c2fb6272181",
+        "group": "b92664c7d4090185",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "Status",
+        "label": "Status",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#17211d",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 400,
+        "y": 720,
+        "wires": []
+    },
+    {
+        "id": "00759b13052bd2d6",
+        "type": "comment",
+        "z": "e7728c2fb6272181",
+        "name": "Limites (página Config)",
+        "info": "",
+        "x": 150,
+        "y": 800,
+        "wires": []
+    },
+    {
+        "id": "88ca5d1b9cc85460",
+        "type": "inject",
+        "z": "e7728c2fb6272181",
+        "name": "ao iniciar",
+        "props": [
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": "0.5",
+        "topic": "",
+        "x": 150,
+        "y": 860,
+        "wires": [
+            [
+                "d28d72a442d64c6e"
+            ]
+        ]
+    },
+    {
+        "id": "ca17d662e32c090d",
+        "type": "ui-button",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Restaurar padrões",
+        "label": "Restaurar padrões",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "emulateClick": false,
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "",
+        "className": "",
+        "icon": "",
+        "iconPosition": "left",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "reset",
+        "topicType": "str",
+        "buttonColor": "",
+        "textColor": "",
+        "iconColor": "",
+        "enableClick": true,
+        "enablePointerdown": false,
+        "pointerdownPayload": "",
+        "pointerdownPayloadType": "str",
+        "enablePointerup": false,
+        "pointerupPayload": "",
+        "pointerupPayloadType": "str",
+        "x": 170,
+        "y": 920,
+        "wires": [
+            [
+                "d28d72a442d64c6e"
+            ]
+        ]
+    },
+    {
+        "id": "d28d72a442d64c6e",
+        "type": "function",
+        "z": "e7728c2fb6272181",
+        "name": "Carregar limites",
+        "func": "// padrão (aula 15)\nconst padrao = {\n    tempBaixa: 20,\n    tempAlta: 25,\n    umidadeAlta: 50,\n    histTemp: 0.5,\n    histUmidade: 2,\n    tempoPresenca: 10\n};\n\nlet limites = global.get('limites', 'file');\nif (!limites || msg.topic === 'reset') {\n    limites = padrao;\n    global.set('limites', limites, 'file');\n}\n\n// atualiza os sliders\nreturn [\n    { payload: limites.tempBaixa },\n    { payload: limites.tempAlta },\n    { payload: limites.umidadeAlta },\n    { payload: limites.histTemp },\n    { payload: limites.histUmidade },\n    { payload: limites.tempoPresenca }\n];\n",
+        "outputs": 6,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 890,
+        "wires": [
+            [
+                "668d35e068cdbb91"
+            ],
+            [
+                "452189175e7c2631"
+            ],
+            [
+                "8e9c925d84277c51"
+            ],
+            [
+                "262f13d675f97c8f"
+            ],
+            [
+                "cf6f6c275566e6e5"
+            ],
+            [
+                "7f1a9706824559e4"
+            ]
+        ]
+    },
+    {
+        "id": "668d35e068cdbb91",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Temperatura baixa (°C)",
+        "label": "Temperatura baixa (°C)",
+        "tooltip": "",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "tempBaixa",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 10,
+        "max": 30,
+        "step": 0.5,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 820,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "452189175e7c2631",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Temperatura alta (°C)",
+        "label": "Temperatura alta (°C)",
+        "tooltip": "",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "tempAlta",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 15,
+        "max": 40,
+        "step": 0.5,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 860,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "8e9c925d84277c51",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Umidade alta (%)",
+        "label": "Umidade alta (%)",
+        "tooltip": "",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "umidadeAlta",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 20,
+        "max": 95,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 900,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "262f13d675f97c8f",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Histerese da temperatura (°C)",
+        "label": "Histerese da temperatura (°C)",
+        "tooltip": "",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "histTemp",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 0,
+        "max": 3,
+        "step": 0.1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 940,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "cf6f6c275566e6e5",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Histerese da umidade (%)",
+        "label": "Histerese da umidade (%)",
+        "tooltip": "",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "histUmidade",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 980,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "7f1a9706824559e4",
+        "type": "ui-slider",
+        "z": "e7728c2fb6272181",
+        "group": "153e8b617dfa2711",
+        "name": "Tempo para apagar o LED de presença (s)",
+        "label": "Tempo para apagar o LED de presença (s)",
+        "tooltip": "",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "passthru": false,
+        "outs": "end",
+        "topic": "tempoPresenca",
+        "topicType": "str",
+        "thumbLabel": "always",
+        "showTicks": "false",
+        "min": 1,
+        "max": 60,
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": true,
+        "x": 720,
+        "y": 1020,
+        "wires": [
+            [
+                "fea5f601c952aab8"
+            ]
+        ]
+    },
+    {
+        "id": "fea5f601c952aab8",
+        "type": "function",
+        "z": "e7728c2fb6272181",
+        "name": "Salvar limite",
+        "func": "// msg.topic = nome do limite\nconst limites = global.get('limites', 'file');\nlimites[msg.topic] = msg.payload;\nglobal.set('limites', limites, 'file');\n\nnode.status({ text: msg.topic + ' = ' + msg.payload });\nreturn null;\n",
+        "outputs": 0,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 920,
+        "wires": []
+    }
+]

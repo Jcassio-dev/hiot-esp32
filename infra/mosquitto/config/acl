@@ -1,0 +1,7 @@
+user nodered
+topic readwrite hiot/#
+
+user esp32
+topic write hiot/+/status
+topic write hiot/+/sensor/#
+topic read hiot/+/led/#
